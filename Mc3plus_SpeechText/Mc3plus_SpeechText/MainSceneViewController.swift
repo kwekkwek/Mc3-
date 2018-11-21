@@ -9,14 +9,24 @@
 import UIKit
 
 class MainSceneViewController: UIViewController {
-
+    var swipeDown:UISwipeGestureRecognizer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         // Do any additional setup after loading the view.
+        swipethisDown()
     }
-    
-
+    func swipethisDown() {
+        swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(Handler))
+        swipeDown?.direction = .down
+        guard let swipeDown = swipeDown else {return}
+        view.addGestureRecognizer(swipeDown)
+    }
+    @objc func Handler()
+    {
+        print("swipe")
+    }
     /*
     // MARK: - Navigation
 
