@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		258A5BC121A53BB7002CB72D /* My Movie.wav in Resources */ = {isa = PBXBuildFile; fileRef = 258A5BC021A53BB7002CB72D /* My Movie.wav */; };
 		36AB178221A506DF00375B99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB178121A506DF00375B99 /* AppDelegate.swift */; };
 		36AB178921A506E000375B99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36AB178821A506E000375B99 /* Assets.xcassets */; };
 		36AB178C21A506E000375B99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36AB178A21A506E000375B99 /* LaunchScreen.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		258A5BC021A53BB7002CB72D /* My Movie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "My Movie.wav"; sourceTree = "<group>"; };
 		36AB177E21A506DF00375B99 /* Mc3plus_SpeechText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mc3plus_SpeechText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36AB178121A506DF00375B99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36AB178821A506E000375B99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		258A5BBF21A53B86002CB72D /* Background Sound */ = {
+			isa = PBXGroup;
+			children = (
+				258A5BC021A53BB7002CB72D /* My Movie.wav */,
+			);
+			path = "Background Sound";
+			sourceTree = "<group>";
+		};
 		36AB177521A506DF00375B99 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		36AB178021A506DF00375B99 /* Mc3plus_SpeechText */ = {
 			isa = PBXGroup;
 			children = (
+				258A5BBF21A53B86002CB72D /* Background Sound */,
 				36AB178121A506DF00375B99 /* AppDelegate.swift */,
 				36AB179921A5077100375B99 /* MainSceneViewController.swift */,
 				36AB179B21A5078300375B99 /* Scene1_ViewController.swift */,
@@ -128,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				258A5BC121A53BB7002CB72D /* My Movie.wav in Resources */,
 				36AB178C21A506E000375B99 /* LaunchScreen.storyboard in Resources */,
 				36AB178921A506E000375B99 /* Assets.xcassets in Resources */,
 			);
@@ -283,7 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N243WM452G;
+				DEVELOPMENT_TEAM = KD4NSQHDV8;
 				INFOPLIST_FILE = Mc3plus_SpeechText/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,7 +313,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N243WM452G;
+				DEVELOPMENT_TEAM = KD4NSQHDV8;
 				INFOPLIST_FILE = Mc3plus_SpeechText/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
