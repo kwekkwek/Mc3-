@@ -17,6 +17,8 @@ class Scene2_ViewController: UIViewController {
     var sound: AVAudioPlayer?
     var speechText: AVSpeechSynthesizer?
     
+    let textNarration = ""
+    
     let textInstruction = "Swipe right."
     
     //MARK: LifeCycles
