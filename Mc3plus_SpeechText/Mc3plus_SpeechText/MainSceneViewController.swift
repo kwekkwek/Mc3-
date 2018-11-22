@@ -27,7 +27,11 @@ class MainSceneViewController: UIViewController {
         soundsInit()
         speechText = AVSpeechSynthesizer()
         speechText?.delegate = self
-        speech(x: textNarration + textInstruction)
+        
+        DispatchQueue.global().async {
+            self.speech(x: self.textNarration)
+            self.speech(x: self.textInstruction)
+        }
         
     }
 
