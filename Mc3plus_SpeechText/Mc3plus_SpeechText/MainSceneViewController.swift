@@ -13,11 +13,12 @@ class MainSceneViewController: UIViewController {
     
     //MARK: Variables
     var swipeDown:UISwipeGestureRecognizer?
+    var doubleTap: UITapGestureRecognizer?
     var sound: AVAudioPlayer?
     var speechText: AVSpeechSynthesizer?
     let textNarration = "Welcome to Black Out, where your auditory is challenged. Please listen carefully and follow all the given instructions to finish the task. Just remember, seeing is not everything."
     
-    let textInstruction = "This is your first task, find a flashlight for your brother. It is located at the study room. Now, swipe down to open your door."
+    let textInstruction = "This is your first task, find a flashlight for your brother. It is located at the study room. Now, swipe down to open your door. You can tap twice to repeat this instruction"
     
     //MARK: LifeCycles
     override func viewDidLoad() {
@@ -44,9 +45,20 @@ class MainSceneViewController: UIViewController {
         guard let swipeDown = swipeDown else {return}
         view.addGestureRecognizer(swipeDown)
     }
-    @objc func Handler()
-    {
+    
+    @objc func Handler() {
         sound?.play()
+    }
+    
+    func replayInstruction() {
+        doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+        doubleTap?.numberOfTapsRequired = 2
+        guard let doubleTap = doubleTap else {return}
+        view.addGestureRecognizer(doubleTap)
+    }
+    
+    @objc func doubleTapped() {
+        speech(x: textInstruction)
     }
     
     //MARK: Sounds Function
@@ -98,6 +110,7 @@ extension MainSceneViewController:AVSpeechSynthesizerDelegate
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         print("finish")
         swipethisDown()
+        replayInstruction()
     }
 }
 extension MainSceneViewController: AVAudioPlayerDelegate
