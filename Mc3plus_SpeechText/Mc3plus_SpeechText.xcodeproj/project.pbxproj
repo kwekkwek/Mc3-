@@ -14,6 +14,7 @@
 		258A5BCB21A6A69E002CB72D /* door_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = 258A5BC821A6A69D002CB72D /* door_open.wav */; };
 		258A5BCC21A6A69E002CB72D /* search.wav in Resources */ = {isa = PBXBuildFile; fileRef = 258A5BC921A6A69D002CB72D /* search.wav */; };
 		258A5BCD21A6A69E002CB72D /* senterClicked.wav in Resources */ = {isa = PBXBuildFile; fileRef = 258A5BCA21A6A69D002CB72D /* senterClicked.wav */; };
+		258A5BCF21A6ADCA002CB72D /* footstep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 258A5BCE21A6ADCA002CB72D /* footstep.wav */; };
 		36AB178221A506DF00375B99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AB178121A506DF00375B99 /* AppDelegate.swift */; };
 		36AB178921A506E000375B99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36AB178821A506E000375B99 /* Assets.xcassets */; };
 		36AB178C21A506E000375B99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36AB178A21A506E000375B99 /* LaunchScreen.storyboard */; };
@@ -31,6 +32,7 @@
 		258A5BC821A6A69D002CB72D /* door_open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = door_open.wav; sourceTree = "<group>"; };
 		258A5BC921A6A69D002CB72D /* search.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = search.wav; sourceTree = "<group>"; };
 		258A5BCA21A6A69D002CB72D /* senterClicked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = senterClicked.wav; sourceTree = "<group>"; };
+		258A5BCE21A6ADCA002CB72D /* footstep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = footstep.wav; sourceTree = "<group>"; };
 		36AB177E21A506DF00375B99 /* Mc3plus_SpeechText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mc3plus_SpeechText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36AB178121A506DF00375B99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36AB178821A506E000375B99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				258A5BC821A6A69D002CB72D /* door_open.wav */,
 				258A5BC921A6A69D002CB72D /* search.wav */,
 				258A5BCA21A6A69D002CB72D /* senterClicked.wav */,
+				258A5BCE21A6ADCA002CB72D /* footstep.wav */,
 			);
 			path = "Background Sound";
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				258A5BCC21A6A69E002CB72D /* search.wav in Resources */,
+				258A5BCF21A6ADCA002CB72D /* footstep.wav in Resources */,
 				258A5BC121A53BB7002CB72D /* My Movie.wav in Resources */,
 				36AB178C21A506E000375B99 /* LaunchScreen.storyboard in Resources */,
 				258A5BCD21A6A69E002CB72D /* senterClicked.wav in Resources */,
