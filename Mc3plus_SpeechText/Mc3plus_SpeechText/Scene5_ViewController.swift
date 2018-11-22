@@ -9,15 +9,15 @@
 import UIKit
 import AVFoundation
 
-class Scene2_ViewController: UIViewController {
+class Scene5_ViewController: UIViewController {
     
     //MARK: Variables
-    var swipeRight:UISwipeGestureRecognizer?
+    var longPress: UILongPressGestureRecognizer?
     var doubleTap: UITapGestureRecognizer?
     var sound: AVAudioPlayer?
     var speechText: AVSpeechSynthesizer?
     
-    let textInstruction = "Swipe right."
+    let textInstruction = "Press your screen and hold it to take out item"
     
     //MARK: LifeCycles
     override func viewDidLoad() {
@@ -37,11 +37,10 @@ class Scene2_ViewController: UIViewController {
     //MARK: Function
     
     //MARK: Gesture Function
-    func swipethisRight() {
-        swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(Handler))
-        swipeRight?.direction = .right
-        guard let swipeRight = swipeRight else {return}
-        view.addGestureRecognizer(swipeRight)
+    func holdPress() {
+        longPress = UILongPressGestureRecognizer(target: self, action: #selector(Handler))
+        guard let longPress = longPress else {return}
+        view.addGestureRecognizer(longPress)
     }
     
     @objc func Handler() {
@@ -100,22 +99,22 @@ class Scene2_ViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 }
-extension Scene2_ViewController:AVSpeechSynthesizerDelegate
+extension Scene5_ViewController:AVSpeechSynthesizerDelegate
 {
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
         print("kata dimulai")
     }
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         print("finish")
-        swipethisRight()
+        holdPress()
         replayInstruction()
     }
 }
-extension Scene2_ViewController: AVAudioPlayerDelegate
+extension Scene5_ViewController: AVAudioPlayerDelegate
 {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("finish SFX")
-        let destination = Scene3_ViewController()
+        let destination = Scene6_ViewController()
         navigationController?.pushViewController(destination, animated: false)
     }
 }
