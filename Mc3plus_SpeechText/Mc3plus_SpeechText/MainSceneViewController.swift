@@ -48,8 +48,10 @@ class MainSceneViewController: UIViewController {
     }
     
     @objc func Handler() {
-        sound?.play()
-        doorSound?.play()
+        
+        DispatchQueue.global().async {
+            self.doorSound?.play()
+        }
     }
     
     func replayInstruction() {
@@ -65,16 +67,6 @@ class MainSceneViewController: UIViewController {
     
     //MARK: Sounds Function
     func soundsInit() {
-        let soundURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: "footstep", ofType: "wav")!)
-        
-        do {
-            try sound = AVAudioPlayer(contentsOf: soundURL)
-            sound?.delegate = self
-            sound?.prepareToPlay()
-        }
-        catch {
-            print("error: \(error.localizedDescription)")
-        }
         
         let doorOpenURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: "door_open", ofType: "wav")!)
         
@@ -112,7 +104,7 @@ class MainSceneViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         // Hide the Navigation Bar
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }
 extension MainSceneViewController:AVSpeechSynthesizerDelegate
