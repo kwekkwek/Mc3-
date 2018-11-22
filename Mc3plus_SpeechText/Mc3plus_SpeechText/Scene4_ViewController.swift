@@ -53,7 +53,7 @@ class Scene4_ViewController: UIViewController {
         speechText?.speak(speecUtterance)
     }
     func soundsInit() {
-        let soundURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: "My Movie", ofType: "wav")!)
+        let soundURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: "drawer", ofType: "wav")!)
         
         do {
             try sound = AVAudioPlayer(contentsOf: soundURL)

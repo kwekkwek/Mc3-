@@ -59,7 +59,7 @@ class Scene3_ViewController: UIViewController {
     
     //MARK: Sounds Function
     func soundsInit() {
-        let soundURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: "My Movie", ofType: "wav")!)
+        let soundURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: "footstep", ofType: "wav")!)
         
         do {
             try sound = AVAudioPlayer(contentsOf: soundURL)

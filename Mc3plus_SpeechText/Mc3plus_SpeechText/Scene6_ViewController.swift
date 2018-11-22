@@ -43,6 +43,7 @@ class Scene6_ViewController: UIViewController {
     
     @objc func Handler() {
         sound?.play()
+        view.backgroundColor = .white
     }
     
     func replayInstruction() {
@@ -58,7 +59,7 @@ class Scene6_ViewController: UIViewController {
     
     //MARK: Sounds Function
     func soundsInit() {
-        let soundURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: "My Movie", ofType: "wav")!)
+        let soundURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: "senterClicked", ofType: "wav")!)
         
         do {
             try sound = AVAudioPlayer(contentsOf: soundURL)
