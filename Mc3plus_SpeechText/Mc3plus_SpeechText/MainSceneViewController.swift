@@ -15,6 +15,7 @@ class MainSceneViewController: UIViewController {
     var swipeDown:UISwipeGestureRecognizer?
     var doubleTap: UITapGestureRecognizer?
     var sound: AVAudioPlayer?
+    var doorSound: AVAudioPlayer?
     var speechText: AVSpeechSynthesizer?
     let textNarration = "Welcome to Black Out, where your auditory is challenged. Please listen carefully and follow all the given instructions to finish the task. Just remember, seeing is not everything."
     
@@ -48,6 +49,7 @@ class MainSceneViewController: UIViewController {
     
     @objc func Handler() {
         sound?.play()
+        doorSound?.play()
     }
     
     func replayInstruction() {
@@ -71,6 +73,17 @@ class MainSceneViewController: UIViewController {
             sound?.prepareToPlay()
         }
         catch {
+            print("error: \(error.localizedDescription)")
+        }
+        
+        let doorOpenURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: "door_open", ofType: "wav")!)
+        
+        do {
+            try doorSound = AVAudioPlayer(contentsOf: doorOpenURL)
+            doorSound?.delegate = self
+            doorSound?.prepareToPlay()
+            
+        } catch {
             print("error: \(error.localizedDescription)")
         }
     }
