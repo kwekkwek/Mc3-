@@ -16,8 +16,8 @@ class Scene3_ViewController: UIViewController {
     var doubleTap: UITapGestureRecognizer?
     var sound: AVAudioPlayer?
     var speechText: AVSpeechSynthesizer?
-    let textNaration = " "
-    let textInstruction = "Go straight to the find the work table by swiping up"
+    let textNaration = "If you remember correctly, the flashlight is in the table's drawer. Once again, you walk forward slowly while swaying your hand to the air in front of you for not tumbling into anything."
+    let textInstruction = "Swipe up to go straight to the table"
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black

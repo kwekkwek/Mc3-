@@ -17,9 +17,9 @@ class MainSceneViewController: UIViewController {
     var sound: AVAudioPlayer?
     var doorSound: AVAudioPlayer?
     var speechText: AVSpeechSynthesizer?
-    let textNarration = "Welcome to Black Out, where your auditory is challenged. Please listen carefully and follow all the given instructions to finish the task. Just remember, seeing is not everything."
+    let textNarration = "Black Out. A place where your auditory is challenged. Please listen carefully and follow all the given instructions to finish the task.  You can tap thrice to repeat this instruction. Just remember, seeing is not everything."
     
-    let textInstruction = "This is your first task, find a flashlight for your brother. It is located at the study room. Now, swipe down to open your door. You can tap thrice to repeat this instruction"
+    let textInstruction = "This is your first task, find a flashlight for your brother. It is located at the study room. Now, swipe down to open the bedroom door."
     
     //MARK: LifeCycles
     override func viewDidLoad() {

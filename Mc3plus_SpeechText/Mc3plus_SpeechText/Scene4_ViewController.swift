@@ -13,11 +13,14 @@ class Scene4_ViewController: UIViewController {
     
     //MARK : Variable native lib
     var swipeDown: UISwipeGestureRecognizer?
+    var doubleTap: UITapGestureRecognizer?
     var sound: AVAudioPlayer?
     var speechText: AVSpeechSynthesizer?
     
     //MARK : Variable
-    let textSpeech:String = "Now, investigate the drawers in front of you, swipe down to investigate"
+    let textNarration: String = "You feel that your hand touch a hard flat surface. This must be the table. Then, you reach your hand to the drawer's handle to open the drawer."
+    
+    let textInstruction:String = "Swipe down to open the drawer"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +30,11 @@ class Scene4_ViewController: UIViewController {
         speechText = AVSpeechSynthesizer()
         speechText?.delegate = self
         soundsInit()
-        toSpeechText(text: textSpeech)
-        // Do any additional setup after loading the view.
+        
+        DispatchQueue.global().async {
+            self.toSpeechText(text: self.textNarration)
+            self.toSpeechText(text: self.textInstruction)
+        }
     }
     func needswipeDown()
     {
@@ -41,6 +47,18 @@ class Scene4_ViewController: UIViewController {
     {
         sound?.play()
     }
+    
+    func replayInstruction() {
+        doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+        doubleTap?.numberOfTapsRequired = 3
+        guard let doubleTap = doubleTap else {return}
+        view.addGestureRecognizer(doubleTap)
+    }
+    
+    @objc func doubleTapped() {
+        toSpeechText(text: textInstruction)
+    }
+    
     func toSpeechText(text: String)
     {
         let speecUtterance = AVSpeechUtterance(string: text)
@@ -90,6 +108,7 @@ extension Scene4_ViewController: AVSpeechSynthesizerDelegate
 {
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         needswipeDown()
+        replayInstruction()
     }
 }
 

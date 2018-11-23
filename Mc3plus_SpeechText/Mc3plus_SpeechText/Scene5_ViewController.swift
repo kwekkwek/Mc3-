@@ -17,7 +17,8 @@ class Scene5_ViewController: UIViewController {
     var sound: AVAudioPlayer?
     var speechText: AVSpeechSynthesizer?
     
-    let textInstruction = "Press your screen and hold it to take out item"
+    let textNarration = "You open the drawer then you rummage through it to find the flashlight."
+    let textInstruction = "Press your screen and hold it to search."
     
     //MARK: LifeCycles
     override func viewDidLoad() {
@@ -29,6 +30,7 @@ class Scene5_ViewController: UIViewController {
         speechText?.delegate = self
         
         DispatchQueue.global().async {
+            self.speech(x: self.textNarration)
             self.speech(x: self.textInstruction)
         }
         

@@ -15,7 +15,7 @@ class Scene6_ViewController: UIViewController {
     var doubleTap: UITapGestureRecognizer?
     var sound: AVAudioPlayer?
     var speechText: AVSpeechSynthesizer?
-    let textNaration = "Great!, You’ve find the flashlight! "
+    let textNarration = "You feel your hand touch something cold, long, and hard. It must be the flashlight. Then you take it out and try to turn it on."
     let textInstruction = "Double tap to turn it on "
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +26,7 @@ class Scene6_ViewController: UIViewController {
         speechText?.delegate = self
         
         DispatchQueue.global().async {
+            self.speech(x: self.textNarration)
             self.speech(x: self.textInstruction)
         }
         
@@ -44,6 +45,7 @@ class Scene6_ViewController: UIViewController {
     @objc func Handler() {
         sound?.play()
         view.backgroundColor = .white
+        toggleFlash()
     }
     
     func replayInstruction() {
@@ -83,6 +85,32 @@ class Scene6_ViewController: UIViewController {
         
         speechText?.speak(speecUtterance)
         
+    }
+    
+    //MARK: Toggle Flashlight
+    func toggleFlash() {
+        let device = AVCaptureDevice.default(for: AVMediaType.video)
+        
+        if (device != nil) {
+            if (device!.hasTorch) {
+                do {
+                    try device!.lockForConfiguration()
+                    if (device!.torchMode == AVCaptureDevice.TorchMode.on) {
+                        device!.torchMode = AVCaptureDevice.TorchMode.off
+                    } else {
+                        do {
+                            try device!.setTorchModeOn(level: 1.0)
+                        } catch {
+                            print(error)
+                        }
+                    }
+                    
+                    device!.unlockForConfiguration()
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
     
     //MARK: show and hide navigation controller

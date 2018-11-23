@@ -13,11 +13,14 @@ class Scene1_ViewController: UIViewController {
     
     //MARK : Variable native lib
     var swipeUp: UISwipeGestureRecognizer?
+    var doubleTap: UITapGestureRecognizer?
     var sound: AVAudioPlayer?
     var speechText: AVSpeechSynthesizer?
     
     //MARK : Variable
-    let textSpeech:String = "Good. Now , swipe up"
+    let textNarration: String = "You open the bedroom door and you see a familiar hallway is laid in front of you. Strange... It's pitch black without any lighting even though there's thunderstorm outside. You feel the breezy wind flows through your face."
+    
+    let textInstruction:String = "Now swipe up to walk across the hallway."
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +30,11 @@ class Scene1_ViewController: UIViewController {
         speechText = AVSpeechSynthesizer()
         speechText?.delegate = self
         soundsInit()
-        toSpeechText(text: textSpeech)
-        // Do any additional setup after loading the view.
+        
+        DispatchQueue.global().async {
+            self.toSpeechText(text: self.textNarration)
+            self.toSpeechText(text: self.textInstruction)
+        }
     }
     func needswipeUp()
     {
@@ -41,6 +47,18 @@ class Scene1_ViewController: UIViewController {
     {
         sound?.play()
     }
+    
+    func replayInstruction() {
+        doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+        doubleTap?.numberOfTapsRequired = 3
+        guard let doubleTap = doubleTap else {return}
+        view.addGestureRecognizer(doubleTap)
+    }
+    
+    @objc func doubleTapped() {
+        toSpeechText(text: textInstruction)
+    }
+    
     func toSpeechText(text: String)
     {
         let speecUtterance = AVSpeechUtterance(string: text)
@@ -90,5 +108,6 @@ extension Scene1_ViewController: AVSpeechSynthesizerDelegate
 {
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         needswipeUp()
+        replayInstruction()
     }
 }

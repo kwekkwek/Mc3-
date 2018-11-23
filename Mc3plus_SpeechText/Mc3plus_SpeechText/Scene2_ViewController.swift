@@ -17,9 +17,9 @@ class Scene2_ViewController: UIViewController {
     var sound: AVAudioPlayer?
     var speechText: AVSpeechSynthesizer?
     
-    let textNarration = ""
+    let textNarration = "You walk slowly forward while touching the wall since you can't see anything. Then you suddenly feel that the wall has reached the end. The studyroom is on the right of the hallway."
     
-    let textInstruction = "Swipe right."
+    let textInstruction = "Swipe right to turn right."
     
     //MARK: LifeCycles
     override func viewDidLoad() {
@@ -31,6 +31,7 @@ class Scene2_ViewController: UIViewController {
         speechText?.delegate = self
         
         DispatchQueue.global().async {
+            self.speech(x: self.textNarration)
             self.speech(x: self.textInstruction)
         }
         
