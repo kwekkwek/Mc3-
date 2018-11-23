@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250D9A0021A7A7A20044957A /* bgm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 250D99FF21A7A7A20044957A /* bgm.wav */; };
 		258A5BC121A53BB7002CB72D /* My Movie.wav in Resources */ = {isa = PBXBuildFile; fileRef = 258A5BC021A53BB7002CB72D /* My Movie.wav */; };
 		258A5BC321A68CF1002CB72D /* Scene4_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258A5BC221A68CF1002CB72D /* Scene4_ViewController.swift */; };
 		258A5BC521A68D09002CB72D /* Scene5_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258A5BC421A68D09002CB72D /* Scene5_ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		250D99FF21A7A7A20044957A /* bgm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bgm.wav; sourceTree = "<group>"; };
 		258A5BC021A53BB7002CB72D /* My Movie.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "My Movie.wav"; sourceTree = "<group>"; };
 		258A5BC221A68CF1002CB72D /* Scene4_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene4_ViewController.swift; sourceTree = "<group>"; };
 		258A5BC421A68D09002CB72D /* Scene5_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene5_ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				258A5BD021A6B7B9002CB72D /* footstep.wav */,
 				258A5BD221A6C6A1002CB72D /* drawer.wav */,
 				258A5BD421A6C6F0002CB72D /* rain_and_thunder.wav */,
+				250D99FF21A7A7A20044957A /* bgm.wav */,
 			);
 			path = "Background Sound";
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				258A5BD321A6C6A1002CB72D /* drawer.wav in Resources */,
 				36AB178C21A506E000375B99 /* LaunchScreen.storyboard in Resources */,
 				258A5BCD21A6A69E002CB72D /* senterClicked.wav in Resources */,
+				250D9A0021A7A7A20044957A /* bgm.wav in Resources */,
 				258A5BCB21A6A69E002CB72D /* door_open.wav in Resources */,
 				36AB178921A506E000375B99 /* Assets.xcassets in Resources */,
 			);

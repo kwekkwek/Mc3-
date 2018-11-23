@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         soundsInit()
-        bgmSound?.volume = 0.7
+        bgmSound?.volume = 4.0
         bgmSound?.play()
         return true
     }
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func soundsInit() {
-        let soundURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: "rain_and_thunder", ofType: "wav")!)
+        let soundURL = URL.init(fileURLWithPath: Bundle.main.path(forResource: "bgm", ofType: "wav")!)
         
         do {
             try bgmSound = AVAudioPlayer(contentsOf: soundURL)
