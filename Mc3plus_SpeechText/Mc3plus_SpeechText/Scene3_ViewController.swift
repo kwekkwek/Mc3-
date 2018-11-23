@@ -27,6 +27,7 @@ class Scene3_ViewController: UIViewController {
         speechText?.delegate = self
         
         DispatchQueue.global().async {
+            self.speech(x: self.textNaration)
             self.speech(x: self.textInstruction)
         }
         
